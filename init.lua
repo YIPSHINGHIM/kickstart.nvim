@@ -295,7 +295,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 
--- modified (need to install ripgrep to make it work "brew install ripgrep" )
+--CUSTOMISE: modified (need to install ripgrep to make it work "brew install ripgrep" )
 vim.keymap.set('n', '<leader>sw', function()
   require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") })
 end, { desc = '[S]earch current [W]ord' })
@@ -305,7 +305,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>pf', vim.cmd.Ex, { desc = '[P]roject [F]ile' })
 
--- make the syntax highlight
+-- NOTE: make the syntax highlight
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
 -- https://github.com/nvim-treesitter/nvim-treesitter
@@ -521,8 +521,8 @@ cmp.setup {
 
 
 
--- customise plugin setting
---
+-- CUSTOMISE:  plugin setting
+
 -- harpoon plugin
 -- https://github.com/ThePrimeagen/harpoon
 local mark = require('harpoon.mark')
@@ -531,10 +531,8 @@ local ui = require('harpoon.ui')
 vim.keymap.set("n", "<leader>af", mark.add_file, { desc = "[A]dd [F]ile to harpoon" })
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
-
 -- undotree
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- fugitive
-
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = "[G]it [S]tates" })
